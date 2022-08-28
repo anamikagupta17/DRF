@@ -20,9 +20,9 @@ def get_data(id = None):
 
 def post_data():
     data={
-        'name':'Anuuu',
-        'roll':'245',
-        'city':'BLR'
+        'name':'Ambika',
+        'roll':'106',
+        'city':'Lucknow'
     }
     
     json_data=json.dumps(data)
