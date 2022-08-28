@@ -4,9 +4,10 @@ Json parser : convert serialized data into Json
 JsonResponse : convert  serialized data into Json and return JsonResponse
 syntax :
 1 method: JsonResponse(serialized.data,safe=True);
-2 method: serializer=StudentSerializer(stu)  #serialized data
+2 method: serializer=StudentSerializer(stu,many=True)  #serialized data
           json_data=JSONRenderer().render(serializer.data) #json data
 By default safe true.
+**many shoud be true for multiple data otherwise it will give error
 for non dict data it shoud be false otherwise it will give error
 desearialization : convert python data into complex data 
 desearialization: we used wwhen create,update or delete
@@ -14,6 +15,13 @@ syntax: for desearialization first need to convert json data to stream then will
   1 Method:   stream=io.BytesIO(json_data)
               python_data=JSONParser().parse(stream) #get python data
               serialize=StudentSerializer(python_data)
+
+
+For Create API: need to add create function in serializer class
+For Update API: need to add update function in serializer class
+syntax: update(self,instance,validated_data)
+instance: old data
+validated_data: new data
 
 
  
