@@ -1,0 +1,71 @@
+import requests
+import json
+
+URL='http://127.0.0.1:8000/studentapi/'
+
+
+
+def get_data(id = None):
+    data={}
+    if id is not None:
+        data={'id':id}
+    json_data=json.dumps(data)
+    r=requests.get(url=URL,data=json_data)    
+    data=r.json()
+    print(data)
+       
+        
+#get_data(9)         # get data for id pass id
+get_data() 
+
+def post_data():
+    data={
+        'name':'Anamika',
+        'roll':'102',
+        'city':'Bangalore'
+    }
+    
+    json_data=json.dumps(data)
+    r=requests.post(url=URL,data=json_data)    
+    data=r.json()
+    print(data)
+    
+    
+#post_data() # add data
+
+
+def update_data():
+    data={
+        'id':10,
+        'name':'Pramod',
+        'roll':112,
+        'city':'Bangalore'
+    }
+    
+    json_data=json.dumps(data)
+    r=requests.put(url=URL,data=json_data)    
+    data=r.json()
+    print(data)
+    
+    
+#update_data() # update  data
+
+
+def delete_data():
+    data={
+        'id':8
+    }
+    
+    json_data=json.dumps(data)
+    r=requests.delete(url=URL,data=json_data)    
+    data=r.json()
+    print(data)
+    
+    
+#delete_data() # delete  data
+    
+        
+
+        
+    
+    

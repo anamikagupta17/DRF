@@ -38,4 +38,8 @@ syntax: def validate(self,data)
 eg: DRF5Validation
 validation priority : validator->field->object
 
+Model Serializer: shortcut to create serializer class (less code as compare to normal serializer) # same as model forms
+* default create and update method implementation
+* automatic validation 
+* no need to add fields  separatly
  
